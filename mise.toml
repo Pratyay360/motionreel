@@ -11,6 +11,6 @@ node = { auto = true }
 [tasks]
 capture = """
 pnpm install
-playwright-cli install
+pnpx @playwright/cli install
 pnpm run capture
 """
