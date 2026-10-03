@@ -183,23 +183,9 @@ function upd(){const t=tl.time();$('#fill').style.width=t/15*100+'%';
 const p=n=>String(n).padStart(2,'0');$('#tc').textContent='00:'+p(Math.floor(t))+':'+p(Math.floor((t%1)*30))}
 $('#pb').onclick=()=>{if(tl.progress()>=1){tl.restart();$('#pb').textContent='❚❚'}else if(tl.paused()){tl.play();$('#pb').textContent='❚❚'}else{tl.pause();$('#pb').textContent='▶'}};
 $('#bar').onclick=e=>{const r=e.currentTarget.getBoundingClientRect();tl.progress((e.clientX-r.left)/r.width)};
-Promise.race([document.fonts.ready,new Promise(r=>setTimeout(r,1500))]).then(()=>tl.play(0));
-window.__reel = {
-  DUR,
-  get time() {
-    return T;
-  },
-  rebuild() {
-    build();
-    apply(T);
-  },
-  seekTo(t) {
-    playing = false;
-    ended = false;
-    replay.classList.remove("show");
-    document.body.classList.remove("hidechrome");
-    seek(t);
-    apply(T);
-  },
-};
+const booted=new Promise(r=>Promise.race([document.fonts.ready,new Promise(x=>setTimeout(x,1500))]).then(()=>r()));
+booted.then(()=>{if(!window.__reel)tl.play(0)});
+
+window.__reel={tl,booted,DUR:tl.duration(),rebuild(){},seekTo(t){tl.pause();tl.time(t)}};
+
 </script></body></html>

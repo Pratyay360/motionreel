@@ -9,24 +9,7 @@ make a repo by copying the template.
 You must add this code snippet to the `<script> </script>` block
 
 ```js
-window.__reel = {
-  DUR,
-  get time() {
-    return T;
-  },
-  rebuild() {
-    build();
-    apply(T);
-  },
-  seekTo(t) {
-    playing = false;
-    ended = false;
-    replay.classList.remove("show");
-    document.body.classList.remove("hidechrome");
-    seek(t);
-    apply(T);
-  },
-};
+window.__reel={tl,booted,DUR:tl.duration(),rebuild(){},seekTo(t){tl.pause();tl.time(t)}};
 ```
 
 Create a motion reel with your favorite llm 
@@ -45,4 +28,3 @@ like it's your showreel for a résumé. go all out.
 ```
 
 # USING THIS WITH CLAUDE
-
