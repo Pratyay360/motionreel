@@ -1,0 +1,33 @@
+name: ci
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  MISE_EXPERIMENTAL: true
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: jdx/mise-action@v3
+      - name: Build video
+        run: |
+          mise trust
+          mise install
+          mise run capture
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish video
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_type == 'tag' && github.ref_name || format('v{0}.{1}', github.run_number, github.run_attempt) }}
+          files: video.mp4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

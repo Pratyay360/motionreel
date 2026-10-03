@@ -1,0 +1,6 @@
+frames/*
+.commandcode/taste/
+node_modules/
+frames/
+# Playwright CLI output (may contain credentials)
+.playwright-cli/
