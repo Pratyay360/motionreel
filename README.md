@@ -1,12 +1,18 @@
 make a repo by copying the template.
 
-[copy template](https://kappa.lol/kGh9ek)
-
-[create a new repo](https://kappa.lol/vFZnx5)
+<video src="https://github.com/user-attachments/assets/3300b17e-f7d8-40db-9b0b-a371de7f6769" controls preload></video>
 
 
+![copy template](https://kappa.lol/kGh9ek)
+
+![create a new repo](https://kappa.lol/vFZnx5)
 
 
+
+
+
+
+You must add this code snippet to the `<script> </script>` block
 
 ```js
 window.__reel={
@@ -22,11 +28,3 @@ window.__reel={
 };
 
 ```
-
-```bash
-npm i
-npx playwright install
-npm run capture
-```
-
-you can also run this containerized using docker/podman/buildah  too
