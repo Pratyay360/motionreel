@@ -11,11 +11,12 @@
     "test": "node capture.js"
   },
   "dependencies": {
-    "ffmpeg-static": "^5.3.0",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "playwright": "^1.64.0"
   },
   "devDependencies": {
-    "@playwright/cli": "^0.1.22"
+    "@playwright/cli": "^0.1.22",
+    "ffmpeg-static": "^5.3.0"
   },
   "allowScripts": {
     "ffmpeg-static": true,
@@ -82,6 +83,7 @@
     "file:../../minizlib@3.1.0-d0c3f6c727d10b94/node_modules/minizlib": true,
     "file:../../yallist@5.0.0-a9476858aac40ff2/node_modules/yallist": true,
     "file:../../../@isaacs+fs-minipass@4.0.1-d7e07c462be36e26/node_modules/@isaacs/fs-minipass": true,
-    "file:../../isexe@4.0.0-22456a0f84ddf8c9/node_modules/isexe": true
+    "file:../../isexe@4.0.0-22456a0f84ddf8c9/node_modules/isexe": true,
+    "@ffmpeg-installer/linux-x64@4.1.0": true
   }
 }
