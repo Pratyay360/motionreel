@@ -30,4 +30,3 @@ like it's your showreel for a résumé. go all out.
 # USING this with any llm. 
 
 <video src="https://github.com/user-attachments/assets/d57b8b22-f326-49b5-b322-dc1612e16aa4" controls preload></video>
-
