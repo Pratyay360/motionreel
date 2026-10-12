@@ -9,9 +9,17 @@ make a repo by copying the template.
 You must add this code snippet to the `<script> </script>` block
 
 ```js
-window.__reel={tl,booted,DUR:tl.duration(),rebuild(){},seekTo(t){tl.pause();tl.time(t)}};
-```
 
+window.__reel={tl,booted,DUR:tl.duration(),rebuild(){},seekTo(t){tl.pause();tl.time(t)}};
+
+window.__reel = {
+  DUR,
+  rebuild(){ fit(); codeBodyH=codeBody.clientHeight-2; buildIV(); },
+  seekTo(t){ setPlaying(false,true); seek(t); render(T.t,T.prev); }
+};
+
+```
+ask your agent to adapt as per this ..
 Create a motion reel with your favorite llm 
 [inspiration](https://x.com/GregorySchier/status/2103611112138920281?s=20)
 

@@ -7,7 +7,7 @@ const fs   = require('fs');
 const path = require('path');
 
 const FILE = 'index.html';
-const W = 1920, H = 1080;   // 1280x720 also fine; 1080x1920 for vertical
+const W = 1920, H = 1080;
 const FPS = 60;
 const OUT = path.join(__dirname, 'video.mp4');
 
