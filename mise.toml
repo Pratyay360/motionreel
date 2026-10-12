@@ -11,7 +11,5 @@ node = { auto = true }
 [tasks]
 capture = """
 npm install
-# npm x playwright install
-npm x @playwright/cli install
 node capture.js
 """
