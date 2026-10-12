@@ -15,14 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - uses: jdx/mise-action@v3
+      - uses: jdx/mise-action@main
       - name: Build video
         run: |
           mise trust
           mise install
           mise run capture
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
 
       - name: Publish video
         uses: softprops/action-gh-release@v2
@@ -30,4 +30,4 @@ jobs:
           tag_name: ${{ github.ref_type == 'tag' && github.ref_name || format('v{0}.{1}', github.run_number, github.run_attempt) }}
           files: video.mp4
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}

@@ -1,17 +1,14 @@
 [tools]
 ffmpeg = "latest"
-node = "24"
-"npm:@playwright/cli" = "latest"
 playwright = "latest"
-pnpm = "latest"
+python = "latest"
 
-[deps]
-node = { auto = true }
+[settings]
+experimental=true
 
 [tasks]
 capture = """
-pnpm install
-pnpx playwright install
-pnpx @playwright/cli install
-pnpm run capture
+playwright install-deps chromium
+playwright install chromium
+./capture.sh
 """
