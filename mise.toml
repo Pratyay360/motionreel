@@ -10,8 +10,8 @@ node = { auto = true }
 
 [tasks]
 capture = """
-pnpm install
-pnpm exec playwright install
-pnpm exec @playwright/cli install
-pnpm run capture
+npm install
+npmx playwright install
+npmx @playwright/cli install
+npm run capture
 """
