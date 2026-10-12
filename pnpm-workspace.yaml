@@ -1,0 +1,3 @@
+allowBuilds:
+  '@ffmpeg-installer/linux-x64': true
+  ffmpeg-static: true

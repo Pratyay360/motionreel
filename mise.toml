@@ -3,12 +3,14 @@ ffmpeg = "latest"
 node = "24"
 "npm:@playwright/cli" = "latest"
 playwright = "latest"
+pnpm = "latest"
 
 [deps]
 node = { auto = true }
 
 [tasks]
 capture = """
-npm install
-node capture.js
+pnpm ci
+pnpm exec playwright install
+pnpm run capture
 """
